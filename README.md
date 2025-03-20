@@ -42,8 +42,10 @@ https://api.aiapi.com/v1/models/omniparser
 ```
 
 ## Code Examples
-You can also see full working demos in `examples/` directory.
+Below are basic usage examples, you can see full working demos in `examples/` directory.
 
+
+### JavaScript 
 See full Python Demo in : ([examples/demo_python.py](examples/demo_python.py))
 ```python
 import requests
