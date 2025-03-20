@@ -1,5 +1,9 @@
 # OmniParser 2 API
 
+
+📄 [OmniParser API](https://inferenceapis.com/models/omniparser-v2-api) | 🌐 [Web Demo](https://inferenceapis.com/models/omniparser-v2-web-demo) | 🛠 [Official GitHub](https://github.com/official-repo) | 📑 [Model Paper](https://arxiv.org/pdf/sample-paper.pdf)
+
+
 ## Overview
 OmniParser 2 is a powerful screen parsing tool that extracts structured data from user interface screenshots. It enhances AI models, such as GPT-4V, by grounding actions in the correct UI regions.
 
@@ -41,7 +45,7 @@ https://api.aiapi.com/v1/models/omniparser
 
 The following example scripts are also available in the `examples/` directory.
 
-### Python (`examples/example_python.py`)
+### Python ([examples/example_python.py](examples/example_python.py))
 ```python
 import requests
 import base64
@@ -64,7 +68,7 @@ response = requests.post(
 print(response.json())
 ```
 
-### JavaScript (`examples/example_javascript.js`)
+### JavaScript ([examples/example_javascript.js](examples/example_javascript.js))
 ```javascript
 const fileInput = document.createElement('input');
 fileInput.type = 'file';
@@ -94,7 +98,7 @@ fileInput.addEventListener('change', function(event) {
 fileInput.click();
 ```
 
-### cURL (`examples/example_curl.sh`)
+### cURL ([examples/example_curl.sh](examples/example_curl.sh))
 ```bash
 curl -X POST \
   https://omniparser.inferenceapis.com/parse \
@@ -105,7 +109,7 @@ curl -X POST \
   }'
 ```
 
-### PHP (`examples/example_php.php`)
+### PHP ([examples/example_php.php](examples/example_php.php))
 ```php
 <?php
 $api_url = 'https://omniparser.inferenceapis.com/parse';
@@ -132,8 +136,3 @@ echo $response;
 ?>
 ```
 
-## Resources
-- [OmniParser API](https://inferenceapis.com/models/omniparser-v2-api)
-- [Web Demo](https://inferenceapis.com/models/omniparser-v2-web-demo)
-- [Official GitHub](https://github.com/official-repo)
-- [Model Paper](https://arxiv.org/pdf/sample-paper.pdf)
