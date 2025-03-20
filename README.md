@@ -1,7 +1,7 @@
 # OmniParser 2 API
 
 
-📄 [OmniParser API](https://inferenceapis.com/models/omniparser-v2-api) | 🌐 [Web Demo](https://inferenceapis.com/models/omniparser-v2-web-demo) | 🛠 [Official GitHub](https://github.com/official-repo) | 📑 [Model Paper](https://arxiv.org/pdf/sample-paper.pdf)
+📄 [OmniParser API](https://inferenceapis.com/models/omniparser-v2-api) | 🌐 [Web Demo](https://inferenceapis.com/models/omniparser-v2-web-demo) | 🛠 [Official GitHub](https://github.com/microsoft/OmniParser) | 📑 [Model Paper](https://arxiv.org/abs/2408.00203)
 
 
 ## Overview
