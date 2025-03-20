@@ -5,7 +5,7 @@
 
 
 ## Overview
-OmniParser 2 is a powerful screen parsing tool that extracts structured data from user interface screenshots. It enhances AI models, such as GPT-4V, by grounding actions in the correct UI regions.
+This is the Inference API wrapper for Omniparser2. OmniParser 2 is a powerful screen parsing tool that extracts structured data from user interface screenshots. It enhances AI models, such as GPT-4V, by grounding actions in the correct UI regions.
 
 ## API Usage
 This API uses [Inference APIs](https://inferenceapis.com/). You will need to get your API key from your [profile page](https://inferenceapis.com/profile).
