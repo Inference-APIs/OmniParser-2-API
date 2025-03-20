@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniParser API Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; text-align: center; }
+        input, button { margin: 10px 0; padding: 8px; }
+        #output { white-space: pre-wrap; text-align: left; background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        #output-image { max-width: 100%; margin-top: 10px; display: none; }
+    </style>
+</head>
+<body>
+
+    <h2>OmniParser API - Simple Web Demo</h2>
+    <p>Upload an image to analyze UI elements.</p>
+
+    <input type="file" id="upload-image" accept="image/*"><br>
+    <button onclick="processImage()">Parse Image</button>
+
+    <h3>Results:</h3>
+    <img id="output-image" alt="Processed Image">
+    <div id="output">Waiting for response...</div>
+
+    <script>
+        async function processImage() {
+            const fileInput = document.getElementById("upload-image");
+            const outputImage = document.getElementById("output-image");
+            const outputDiv = document.getElementById("output");
+
+            if (!fileInput.files.length) {
+                alert("Please select an image first.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = async function() {
+                const base64Image = reader.result.split(",")[1];
+
+                const payload = {
+                    base64_image: base64Image,
+                    box_threshold: 0.5,
+                    iou_threshold: 0.3,
+                    text_threshold: 0.7,
+                    use_paddleocr: true
+                };
+
+                try {
+                    outputDiv.textContent = "Processing...";
+                    const response = await fetch("https://omniparser.inferenceapis.com/parse", {
+                        method: "POST",
+                        headers: {
+                            "Authorization": "Bearer YOUR_API_KEY",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    outputDiv.textContent = JSON.stringify(result, null, 2);
+
+                    if (result.processed_image) {
+                        outputImage.src = "data:image/png;base64," + result.processed_image;
+                        outputImage.style.display = "block";
+                    } else {
+                        outputImage.style.display = "none";
+                    }
+                } catch (error) {
+                    outputDiv.textContent = "Error processing image.";
+                }
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    </script>
+
+</body>
+</html>
+

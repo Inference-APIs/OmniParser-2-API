@@ -42,10 +42,9 @@ https://api.aiapi.com/v1/models/omniparser
 ```
 
 ## Code Examples
+You can also see full working demos in `examples/` directory.
 
-The following example scripts are also available in the `examples/` directory.
-
-### Python ([examples/example_python.py](examples/example_python.py))
+See full Python Demo in : ([examples/demo_python.py](examples/demo_python.py))
 ```python
 import requests
 import base64
@@ -68,7 +67,9 @@ response = requests.post(
 print(response.json())
 ```
 
-### JavaScript ([examples/example_javascript.js](examples/example_javascript.js))
+### JavaScript 
+See full html/js demo in : ([examples/demo_web.html](examples/demo_web.html))
+
 ```javascript
 const fileInput = document.createElement('input');
 fileInput.type = 'file';
@@ -98,7 +99,7 @@ fileInput.addEventListener('change', function(event) {
 fileInput.click();
 ```
 
-### cURL ([examples/example_curl.sh](examples/example_curl.sh))
+### cURL 
 ```bash
 curl -X POST \
   https://omniparser.inferenceapis.com/parse \
@@ -109,7 +110,7 @@ curl -X POST \
   }'
 ```
 
-### PHP ([examples/example_php.php](examples/example_php.php))
+### PHP 
 ```php
 <?php
 $api_url = 'https://omniparser.inferenceapis.com/parse';
